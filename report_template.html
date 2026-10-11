@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Security Log Analysis Report</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #0e1117; color: #e6edf3;
+    margin: 0; padding: 24px;
+  }
+  h1 { color: #58a6ff; border-bottom: 2px solid #30363d; padding-bottom: 12px; }
+  h2 { color: #79c0ff; margin-top: 32px; border-left: 4px solid #58a6ff; padding-left: 12px; }
+  h3 { color: #79c0ff; margin-top: 20px; font-size: 15px; }
+  .meta {
+    background: #161b22; padding: 16px; border-radius: 8px;
+    border: 1px solid #30363d; margin-bottom: 24px;
+  }
+  .meta span { color: #8b949e; }
+  .meta b { color: #e6edf3; }
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px; margin: 24px 0;
+  }
+  .stat-card {
+    background: #161b22; padding: 20px; border-radius: 8px;
+    border: 1px solid #30363d; text-align: center;
+  }
+  .stat-card .num { font-size: 32px; font-weight: bold; color: #58a6ff; }
+  .stat-card .label { color: #8b949e; font-size: 13px; margin-top: 4px; }
+  .stat-card .num.red { color: #da3633; }
+  .stat-card .num.green { color: #3fb950; }
+  .stat-card .num.yellow { color: #d29922; }
+
+  table {
+    width: 100%; border-collapse: collapse; margin-top: 12px;
+    background: #161b22; border-radius: 8px; overflow: hidden;
+    font-size: 13px;
+  }
+  th { background: #21262d; color: #79c0ff; padding: 10px; text-align: left; }
+  td { padding: 8px 10px; border-top: 1px solid #30363d; }
+  tr:hover { background: #1c2128; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 12px;
+    font-size: 11px; font-weight: bold;
+  }
+  .badge-critical { background: #da3633; color: white; }
+  .badge-high     { background: #f0883e; color: white; }
+  .badge-medium   { background: #9e6a03; color: white; }
+  .badge-green    { background: #238636; color: white; }
+  .badge-gray     { background: #30363d; color: #e6edf3; }
+  .reasons { color: #8b949e; font-size: 12px; }
+  footer { margin-top: 40px; text-align: center; color: #8b949e; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>🚨 Security Log Analysis Report</h1>
+
+<div class="meta">
+  <p><span>Source file:</span> <b>{{ source_file }}</b></p>
+  <p><span>Generated at:</span> <b>{{ generated_at }}</b></p>
+</div>
+
+<h2>📊 Summary</h2>
+<div class="stats">
+  <div class="stat-card">
+    <div class="num">{{ data.summary.total_events }}</div>
+    <div class="label">Total Events</div>
+  </div>
+  <div class="stat-card">
+    <div class="num red">{{ data.summary.event_counts.failed_password or 0 }}</div>
+    <div class="label">Failed Logins</div>
+  </div>
+  <div class="stat-card">
+    <div class="num green">{{ data.summary.event_counts.accepted_password or 0 }}</div>
+    <div class="label">Successful Logins</div>
+  </div>
+  <div class="stat-card">
+    <div class="num yellow">{{ data.summary.event_counts.invalid_user or 0 }}</div>
+    <div class="label">Invalid Users</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">{{ data.summary.unique_ips }}</div>
+    <div class="label">Unique IPs</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">{{ data.summary.unique_users }}</div>
+    <div class="label">Unique Users</div>
+  </div>
+</div>
+
+<h2>💥 Brute-Force Attacks ({{ data.brute_force|length }})</h2>
+{% if data.brute_force %}
+<table>
+  <tr>
+    <th>IP</th><th>Severity</th><th>Attempts</th>
+    <th>Peak ({{ data.brute_force[0].window_minutes }}m)</th>
+    <th>Targets</th><th>Last Seen</th>
+  </tr>
+  {% for b in data.brute_force %}
+  <tr>
+    <td><code>{{ b.ip }}</code></td>
+    <td>
+      <span class="badge badge-{{ b.severity|lower }}">{{ b.severity }}</span>
+    </td>
+    <td>{{ b.total_attempts }}</td>
+    <td>{{ b.peak_attempts_in_window }}</td>
+    <td class="reasons">
+      {% for u, c in b.target_usernames %}{{ u }} ({{ c }}), {% endfor %}
+    </td>
+    <td>{{ b.last_seen }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p style="color:#8b949e;">No brute-force attacks detected.</p>
+{% endif %}
+
+<h2>🕵️ Suspicious IPs ({{ data.suspicious_ips|length }})</h2>
+{% if data.suspicious_ips %}
+<table>
+  <tr>
+    <th>IP</th><th>Score</th><th>Severity</th>
+    <th>Failed</th><th>Success</th><th>Targets</th><th>Reasons</th>
+  </tr>
+  {% for s in data.suspicious_ips %}
+  <tr>
+    <td><code>{{ s.ip }}</code></td>
+    <td>{{ s.score }}</td>
+    <td>
+      <span class="badge badge-{{ s.severity|lower }}">{{ s.severity }}</span>
+    </td>
+    <td>{{ s.failed }}</td>
+    <td>{{ s.success }}</td>
+    <td>{{ s.distinct_targets }}</td>
+    <td class="reasons">{{ s.reasons|join(" • ") }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p style="color:#8b949e;">No suspicious IPs detected.</p>
+{% endif %}
+
+<h2>🌐 Top Source IPs</h2>
+<table>
+  <tr><th>IP Address</th><th>Events</th></tr>
+  {% for ip in data.top_ips %}
+  <tr><td><code>{{ ip.ip }}</code></td><td>{{ ip.count }}</td></tr>
+  {% endfor %}
+</table>
+
+<h2>👤 Top Targeted Users</h2>
+<table>
+  <tr><th>Username</th><th>Events</th></tr>
+  {% for u in data.top_users %}
+  <tr><td>{{ u.user }}</td><td>{{ u.count }}</td></tr>
+  {% endfor %}
+</table>
+
+<h2>📋 Full Timeline (first 100)</h2>
+<table>
+  <tr><th>Timestamp</th><th>Event</th><th>User</th><th>IP</th></tr>
+  {% for e in data.timeline[:100] %}
+  <tr>
+    <td>{{ e.timestamp }}</td>
+    <td>
+      {% if e.event_type == "failed_password" %}
+        <span class="badge badge-critical">failed</span>
+      {% elif e.event_type == "accepted_password" %}
+        <span class="badge badge-green">accepted</span>
+      {% elif e.event_type == "invalid_user" %}
+        <span class="badge badge-high">invalid user</span>
+      {% else %}
+        <span class="badge badge-gray">{{ e.event_type }}</span>
+      {% endif %}
+    </td>
+    <td>{{ e.user }}</td>
+    <td><code>{{ e.ip }}</code></td>
+  </tr>
+  {% endfor %}
+</table>
+
+<footer>
+  Generated by <b>Security Log Analyzer</b> — DFIR Tool<br>
+  {{ generated_at }}
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+ip,severity,total_attempts,peak_in_window,target_users,first_seen,last_seen
+185.220.101.5,HIGH,12,12,"root, admin, ubuntu",2026-10-11T08:20:15,2026-10-11T08:20:48
+80.82.77.33,HIGH,12,12,git,2026-10-11T10:30:00,2026-10-11T10:30:33
+45.155.205.10,MEDIUM,7,7,"oracle, postgres, mysql, jenkins, tomcat",2026-10-11T08:21:01,2026-10-11T08:21:13

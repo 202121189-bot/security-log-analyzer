@@ -1,0 +1,452 @@
+{
+  "metadata": {
+    "source_file": "sample_logs\\auth.log.sample",
+    "analyzed_at": "2026-10-11T21:23:00"
+  },
+  "summary": {
+    "total_events": 41,
+    "event_counts": {
+      "accepted_password": 3,
+      "failed_password": 27,
+      "invalid_user": 7,
+      "sudo_command": 2,
+      "session_opened": 2
+    },
+    "unique_ips": 6,
+    "unique_users": 12
+  },
+  "timeline": [
+    {
+      "timestamp": "2026-10-11T08:15:01",
+      "event_type": "accepted_password",
+      "user": "admin",
+      "ip": "192.168.1.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:15",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:18",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:21",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:24",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:27",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:30",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:33",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:36",
+      "event_type": "failed_password",
+      "user": "root",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:39",
+      "event_type": "failed_password",
+      "user": "admin",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:42",
+      "event_type": "failed_password",
+      "user": "admin",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:45",
+      "event_type": "failed_password",
+      "user": "ubuntu",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:20:48",
+      "event_type": "failed_password",
+      "user": "ubuntu",
+      "ip": "185.220.101.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:01",
+      "event_type": "invalid_user",
+      "user": "oracle",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:03",
+      "event_type": "invalid_user",
+      "user": "postgres",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:05",
+      "event_type": "invalid_user",
+      "user": "mysql",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:07",
+      "event_type": "invalid_user",
+      "user": "jenkins",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:09",
+      "event_type": "invalid_user",
+      "user": "tomcat",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:11",
+      "event_type": "invalid_user",
+      "user": "hadoop",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:21:13",
+      "event_type": "invalid_user",
+      "user": "elasticsearch",
+      "ip": "45.155.205.10"
+    },
+    {
+      "timestamp": "2026-10-11T08:25:00",
+      "event_type": "accepted_password",
+      "user": "admin",
+      "ip": "10.0.0.5"
+    },
+    {
+      "timestamp": "2026-10-11T08:30:12",
+      "event_type": "sudo_command",
+      "user": "admin",
+      "ip": ""
+    },
+    {
+      "timestamp": "2026-10-11T09:00:00",
+      "event_type": "session_opened",
+      "user": "admin",
+      "ip": ""
+    },
+    {
+      "timestamp": "2026-10-11T09:05:15",
+      "event_type": "failed_password",
+      "user": "admin",
+      "ip": "192.168.1.50"
+    },
+    {
+      "timestamp": "2026-10-11T09:05:18",
+      "event_type": "failed_password",
+      "user": "admin",
+      "ip": "192.168.1.50"
+    },
+    {
+      "timestamp": "2026-10-11T09:05:21",
+      "event_type": "failed_password",
+      "user": "admin",
+      "ip": "192.168.1.50"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:00",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:03",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:06",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:09",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:12",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:15",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:18",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:21",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:24",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:27",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:30",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T10:30:33",
+      "event_type": "failed_password",
+      "user": "git",
+      "ip": "80.82.77.33"
+    },
+    {
+      "timestamp": "2026-10-11T11:00:00",
+      "event_type": "accepted_password",
+      "user": "admin",
+      "ip": "10.0.0.5"
+    },
+    {
+      "timestamp": "2026-10-11T11:15:00",
+      "event_type": "sudo_command",
+      "user": "admin",
+      "ip": ""
+    },
+    {
+      "timestamp": "2026-10-11T12:00:00",
+      "event_type": "session_opened",
+      "user": "deploy",
+      "ip": ""
+    }
+  ],
+  "top_ips": [
+    {
+      "ip": "185.220.101.5",
+      "count": 12
+    },
+    {
+      "ip": "80.82.77.33",
+      "count": 12
+    },
+    {
+      "ip": "45.155.205.10",
+      "count": 7
+    },
+    {
+      "ip": "192.168.1.50",
+      "count": 3
+    },
+    {
+      "ip": "10.0.0.5",
+      "count": 2
+    },
+    {
+      "ip": "192.168.1.10",
+      "count": 1
+    }
+  ],
+  "top_users": [
+    {
+      "user": "git",
+      "count": 12
+    },
+    {
+      "user": "admin",
+      "count": 11
+    },
+    {
+      "user": "root",
+      "count": 8
+    },
+    {
+      "user": "ubuntu",
+      "count": 2
+    },
+    {
+      "user": "oracle",
+      "count": 1
+    },
+    {
+      "user": "postgres",
+      "count": 1
+    },
+    {
+      "user": "mysql",
+      "count": 1
+    },
+    {
+      "user": "jenkins",
+      "count": 1
+    },
+    {
+      "user": "tomcat",
+      "count": 1
+    },
+    {
+      "user": "hadoop",
+      "count": 1
+    }
+  ],
+  "brute_force": [
+    {
+      "ip": "185.220.101.5",
+      "total_attempts": 12,
+      "peak_attempts_in_window": 12,
+      "window_minutes": 10,
+      "first_seen": "2026-10-11T08:20:15",
+      "last_seen": "2026-10-11T08:20:48",
+      "target_usernames": [
+        [
+          "root",
+          8
+        ],
+        [
+          "admin",
+          2
+        ],
+        [
+          "ubuntu",
+          2
+        ]
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "ip": "80.82.77.33",
+      "total_attempts": 12,
+      "peak_attempts_in_window": 12,
+      "window_minutes": 10,
+      "first_seen": "2026-10-11T10:30:00",
+      "last_seen": "2026-10-11T10:30:33",
+      "target_usernames": [
+        [
+          "git",
+          12
+        ]
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "ip": "45.155.205.10",
+      "total_attempts": 7,
+      "peak_attempts_in_window": 7,
+      "window_minutes": 10,
+      "first_seen": "2026-10-11T08:21:01",
+      "last_seen": "2026-10-11T08:21:13",
+      "target_usernames": [
+        [
+          "oracle",
+          1
+        ],
+        [
+          "postgres",
+          1
+        ],
+        [
+          "mysql",
+          1
+        ],
+        [
+          "jenkins",
+          1
+        ],
+        [
+          "tomcat",
+          1
+        ]
+      ],
+      "severity": "MEDIUM"
+    }
+  ],
+  "suspicious_ips": [
+    {
+      "ip": "185.220.101.5",
+      "score": 50,
+      "severity": "HIGH",
+      "failed": 12,
+      "success": 0,
+      "invalid_user": 0,
+      "distinct_targets": 3,
+      "first_seen": "2026-10-11T08:20:15",
+      "last_seen": "2026-10-11T08:20:48",
+      "reasons": [
+        "12 failed login attempts",
+        "100% failure rate"
+      ]
+    },
+    {
+      "ip": "80.82.77.33",
+      "score": 50,
+      "severity": "HIGH",
+      "failed": 12,
+      "success": 0,
+      "invalid_user": 0,
+      "distinct_targets": 1,
+      "first_seen": "2026-10-11T10:30:00",
+      "last_seen": "2026-10-11T10:30:33",
+      "reasons": [
+        "12 failed login attempts",
+        "100% failure rate"
+      ]
+    },
+    {
+      "ip": "45.155.205.10",
+      "score": 45,
+      "severity": "HIGH",
+      "failed": 0,
+      "success": 0,
+      "invalid_user": 7,
+      "distinct_targets": 7,
+      "first_seen": "2026-10-11T08:21:01",
+      "last_seen": "2026-10-11T08:21:13",
+      "reasons": [
+        "7 distinct target users (enumeration)",
+        "7 invalid user attempts"
+      ]
+    }
+  ]
+}

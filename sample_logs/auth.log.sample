@@ -1,0 +1,43 @@
+Oct 11 08:15:01 server sshd[1234]: Accepted password for admin from 192.168.1.10 port 50123 ssh2
+Oct 11 08:20:15 server sshd[1235]: Failed password for root from 185.220.101.5 port 45001 ssh2
+Oct 11 08:20:18 server sshd[1236]: Failed password for root from 185.220.101.5 port 45002 ssh2
+Oct 11 08:20:21 server sshd[1237]: Failed password for root from 185.220.101.5 port 45003 ssh2
+Oct 11 08:20:24 server sshd[1238]: Failed password for root from 185.220.101.5 port 45004 ssh2
+Oct 11 08:20:27 server sshd[1239]: Failed password for root from 185.220.101.5 port 45005 ssh2
+Oct 11 08:20:30 server sshd[1240]: Failed password for root from 185.220.101.5 port 45006 ssh2
+Oct 11 08:20:33 server sshd[1241]: Failed password for root from 185.220.101.5 port 45007 ssh2
+Oct 11 08:20:36 server sshd[1242]: Failed password for root from 185.220.101.5 port 45008 ssh2
+Oct 11 08:20:39 server sshd[1243]: Failed password for admin from 185.220.101.5 port 45009 ssh2
+Oct 11 08:20:42 server sshd[1244]: Failed password for admin from 185.220.101.5 port 45010 ssh2
+Oct 11 08:20:45 server sshd[1245]: Failed password for ubuntu from 185.220.101.5 port 45011 ssh2
+Oct 11 08:20:48 server sshd[1246]: Failed password for ubuntu from 185.220.101.5 port 45012 ssh2
+Oct 11 08:21:01 server sshd[1247]: Invalid user oracle from 45.155.205.10 port 33221 ssh2
+Oct 11 08:21:03 server sshd[1248]: Invalid user postgres from 45.155.205.10 port 33222 ssh2
+Oct 11 08:21:05 server sshd[1249]: Invalid user mysql from 45.155.205.10 port 33223 ssh2
+Oct 11 08:21:07 server sshd[1250]: Invalid user jenkins from 45.155.205.10 port 33224 ssh2
+Oct 11 08:21:09 server sshd[1251]: Invalid user tomcat from 45.155.205.10 port 33225 ssh2
+Oct 11 08:21:11 server sshd[1252]: Invalid user hadoop from 45.155.205.10 port 33226 ssh2
+Oct 11 08:21:13 server sshd[1253]: Invalid user elasticsearch from 45.155.205.10 port 33227 ssh2
+Oct 11 08:25:00 server sshd[1260]: Accepted password for admin from 10.0.0.5 port 51000 ssh2
+Oct 11 08:30:12 server sudo: admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash
+Oct 11 09:00:00 server sshd[1300]: pam_unix(sshd:session): session opened for user admin
+Oct 11 09:05:15 server sshd[1310]: Failed password for admin from 192.168.1.50 port 40001 ssh2
+Oct 11 09:05:18 server sshd[1311]: Failed password for admin from 192.168.1.50 port 40002 ssh2
+Oct 11 09:05:21 server sshd[1312]: Failed password for admin from 192.168.1.50 port 40003 ssh2
+Oct 11 10:15:30 server sshd[1400]: Accepted publickey for deploy from 10.0.0.20 port 55000 ssh2
+Oct 11 10:30:00 server sshd[1420]: Failed password for git from 80.82.77.33 port 60001 ssh2
+Oct 11 10:30:03 server sshd[1421]: Failed password for git from 80.82.77.33 port 60002 ssh2
+Oct 11 10:30:06 server sshd[1422]: Failed password for git from 80.82.77.33 port 60003 ssh2
+Oct 11 10:30:09 server sshd[1423]: Failed password for git from 80.82.77.33 port 60004 ssh2
+Oct 11 10:30:12 server sshd[1424]: Failed password for git from 80.82.77.33 port 60005 ssh2
+Oct 11 10:30:15 server sshd[1425]: Failed password for git from 80.82.77.33 port 60006 ssh2
+Oct 11 10:30:18 server sshd[1426]: Failed password for git from 80.82.77.33 port 60007 ssh2
+Oct 11 10:30:21 server sshd[1427]: Failed password for git from 80.82.77.33 port 60008 ssh2
+Oct 11 10:30:24 server sshd[1428]: Failed password for git from 80.82.77.33 port 60009 ssh2
+Oct 11 10:30:27 server sshd[1429]: Failed password for git from 80.82.77.33 port 60010 ssh2
+Oct 11 10:30:30 server sshd[1430]: Failed password for git from 80.82.77.33 port 60011 ssh2
+Oct 11 10:30:33 server sshd[1431]: Failed password for git from 80.82.77.33 port 60012 ssh2
+Oct 11 11:00:00 server sshd[1500]: Accepted password for admin from 10.0.0.5 port 52000 ssh2
+Oct 11 11:15:00 server sudo: admin : TTY=pts/1 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt update
+Oct 11 12:00:00 server sshd[1600]: pam_unix(sshd:session): session opened for user deploy
+Oct 11 14:30:00 server sshd[1700]: Accepted publickey for deploy from 10.0.0.20 port 56000 ssh2

@@ -1,0 +1,4 @@
+ip,score,severity,failed,success,invalid_user,distinct_targets,first_seen,last_seen,reasons
+185.220.101.5,50,HIGH,12,0,0,3,2026-10-11T08:20:15,2026-10-11T08:20:48,"['12 failed login attempts', '100% failure rate']"
+80.82.77.33,50,HIGH,12,0,0,1,2026-10-11T10:30:00,2026-10-11T10:30:33,"['12 failed login attempts', '100% failure rate']"
+45.155.205.10,45,HIGH,0,0,7,7,2026-10-11T08:21:01,2026-10-11T08:21:13,"['7 distinct target users (enumeration)', '7 invalid user attempts']"
